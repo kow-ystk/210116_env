@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/kow-ystk/210116_env/issues"
   },
-  "homepage": "https://github.com/kow-ystk/210116_env#readme"
+  "homepage": "https://github.com/kow-ystk/210116_env#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2"
+  }
 }
