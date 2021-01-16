@@ -9,7 +9,9 @@ gulp.task("default", function () {
     gulp
       .src("css/style.scss")
       // Sassのコンパイルを実行
-      .pipe(sass())
+      .pipe(sass({
+        outputStyle: "expanded"
+      }))
       // cssフォルダー以下に保存
       .pipe(gulp.dest("css"))
   );
