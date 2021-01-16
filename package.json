@@ -1,0 +1,23 @@
+{
+  "name": "210116_env",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kow-ystk/210116_env.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kow-ystk/210116_env/issues"
+  },
+  "homepage": "https://github.com/kow-ystk/210116_env#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2"
+  }
+}
