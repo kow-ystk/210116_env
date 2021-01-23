@@ -3,7 +3,7 @@ const { src, dest, watch, parallel } = require("gulp");
 // Pugをコンパイルするプラグインを読み込み
 const pug = require('gulp-pug');
 // Sassをコンパイルするプラグインを読み込み
-const sass = require("gulp-sass");
+const sass = require("gulp-dart-sass");
 // エラーが原因でタスクが強制停止することを防止
 const plumber = require('gulp-plumber');
 // エラー通知
