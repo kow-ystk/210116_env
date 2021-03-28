@@ -18,6 +18,24 @@ const plumber = require('gulp-plumber');
 const notify = require('gulp-notify');
 
 /**
+ * 画像を圧縮するタスク
+ */
+const compressImg = () => {
+  src('/assets/images/**')
+  // .pipe(changed('dest/assets/images'))
+  .pipe(
+    imagemin([
+      pngquant({
+        quality: [.60, .70], // pngの画質 60~70%
+        speed: 1 // 実行速度 1~10まで指定可能で大きいほど速いが品質に影響する
+      }),
+      mozjpeg({quality: 65}) // jpgの画質
+    ])
+  )
+  .pipe(dest('/dest/assets/images/'));
+}
+
+/**
  * Sassをコンパイルするタスク
  */
 const compileSass = () =>
@@ -55,32 +73,14 @@ const compilePug = (done)=>{
 }
 
 /**
- * 画像を圧縮するタスク
- */
-const imagemin = () => {
-  .src('./src/assets/images/**')
-  .pipe(changed('./dest/assets/images'))
-  .pipe(
-    imagemin([
-      pngquant({
-        quality: [.60, .70], // pngの画質 60~70%
-        speed: 1 // 実行速度 1~10まで指定可能で大きいほど速いが品質に影響する
-      }),
-      mozjpeg({quality: 65}) // jpgの画質
-    ])
-  )
-  .pipe(gulp.dest('./dest/assets/images'));
-}
-
-/**
  * PugファイルとSassファイルと画像フォルダを監視し、変更があったら変換
  */
 const watcher = () => watch(
   "./**/*",
   parallel(
+    compressImg,
     compileSass,
-    compilePug,
-    imagemin
+    compilePug
   )
 );
 

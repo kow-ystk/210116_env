@@ -8,9 +8,9 @@ npm run dev(gulp起動)
 - scssの編集→cssへコンパイル
 
 ## 実装したい機能
-- コンパイル
+- コンパイル 実装済
   - Pug, Scss
-- 圧縮
+- 圧縮 実装済だがだがうまくいっていない
   - HTML, CSS, JS, 画像
   - (可読性を優先したいので、一旦今回は画像だけでいいかも)
   - (今回はpngとjpgを対象)
@@ -20,17 +20,17 @@ npm run dev(gulp起動)
   - imagemin-pngquant→pngを圧縮
   - imagemin-svgo→svgを圧縮
   - gulp-uglify jsを圧縮
-- linter(ソースコードの問題チェック)
+- linter(ソースコードの問題チェック) 未実装
   - HTML, CSS, JS
   - htmlhint
   - stylelint
   - eslint
-- ベンダープレフィックス(ブラウザによって適用されないCSSを適用できるようにする記述)
+- ベンダープレフィックス(ブラウザによって適用されないCSSを適用できるようにする記述) 未実装
   - CSS
   - autoprefixerで自動付与
-- 変更されたファイルのみを処理する
+- 変更されたファイルのみを処理する 実装済
   - gulp-changed
-- CSSのプロパティ記述順を整える
+- CSSのプロパティ記述順を整える 未実装
   - recess-order
   - order
 
@@ -77,3 +77,4 @@ npm i -Dでインストール
 - postcss-scss
   - SassのSCSS記法のパーサー
 - gulp-webserverないのになぜローカルサーバ立ち上がる？
+- 画像の圧縮がうまくいってない
