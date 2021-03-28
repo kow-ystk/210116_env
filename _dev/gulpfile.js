@@ -4,6 +4,14 @@ const { src, dest, watch, parallel } = require("gulp");
 const pug = require('gulp-pug');
 // Sassをコンパイルするプラグインを読み込み
 const sass = require("gulp-dart-sass");
+// 画像を圧縮するプラグインを読み込み
+const imagemin = require('gulp-imagemin');
+// jpg画像を圧縮するプラグインを読み込み
+const mozjpeg = require('imagemin-mozjpeg');
+// png画像を圧縮するプラグインを読み込み
+const pngquant = require('imagemin-pngquant');
+// 監視対象と出力先のディレクトリの差分を検出し、変更があったファイルのみを処理の対象にするプラグインを読み込み
+const changed = require('gulp-changed');
 // エラーが原因でタスクが強制停止することを防止
 const plumber = require('gulp-plumber');
 // エラー通知
@@ -47,13 +55,32 @@ const compilePug = (done)=>{
 }
 
 /**
- * PugファイルとSassファイルを監視し、変更があったら変換
+ * 画像を圧縮するタスク
+ */
+const imagemin = () => {
+  .src('./src/assets/images/**')
+  .pipe(changed('./dest/assets/images'))
+  .pipe(
+    imagemin([
+      pngquant({
+        quality: [.60, .70], // pngの画質 60~70%
+        speed: 1 // 実行速度 1~10まで指定可能で大きいほど速いが品質に影響する
+      }),
+      mozjpeg({quality: 65}) // jpgの画質
+    ])
+  )
+  .pipe(gulp.dest('./dest/assets/images'));
+}
+
+/**
+ * PugファイルとSassファイルと画像フォルダを監視し、変更があったら変換
  */
 const watcher = () => watch(
   "./**/*",
   parallel(
     compileSass,
-    compilePug
+    compilePug,
+    imagemin
   )
 );
 

@@ -54,6 +54,7 @@ npm i -Dでインストール
   - エラーが原因でタスクが強制停止することを防止
 - gulp-imagemin
   - 画像圧縮
+  - 参考: https://dezanari.com/gulp-imagemin/
 - imagemin-pngquant
   - pngを圧縮
 - imagemin-mozjpeg
