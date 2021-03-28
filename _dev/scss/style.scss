@@ -8,6 +8,9 @@ div {
 // 変数のテスト
 $fontColor: #333;
 
-h1 {
-  color: $fontColor;
+.header {
+  &__title {
+    text-align: center;
+    color: $fontColor;
+  }
 }

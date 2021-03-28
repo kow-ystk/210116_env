@@ -2,6 +2,7 @@ div p {
   font-weight: bold;
 }
 
-h1 {
+.header__title {
+  text-align: center;
   color: #333;
 }

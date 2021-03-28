@@ -1,11 +1,20 @@
 # 210116 環境構築の練習
 
+## 実行方法
+cd _dev
+npm i
+npm run dev(gulp起動)
+- pugの編集→htmlへコンパイル
+- scssの編集→cssへコンパイル
+
+
 ## 実装したい機能
 - コンパイル
   - Pug, Scss
 - 圧縮
   - HTML, CSS, JS, 画像
   - (可読性を優先したいので、一旦今回は画像だけでいいかも)
+  - (今回はpngとjpgを対象)
   - imagemin
   - imagemin-gifsicle→gifを圧縮
   - imagemin-mozjpeg→jpegを圧縮
@@ -27,6 +36,7 @@
   - order
 
 ## 使用パッケージ
+npm i -Dでインストール
 - gulp
   - Gulp本体
 - gulp-pug
@@ -56,6 +66,4 @@
   - stylelintログを見やすくして表示
 - postcss-scss
   - SassのSCSS記法のパーサー
-- sass
-  - 無くてもコンパイルできるけど、なぜ必要？
 - gulp-webserverないのになぜローカルサーバ立ち上がる？
