@@ -7,7 +7,6 @@ npm run dev(gulp起動)
 - pugの編集→htmlへコンパイル
 - scssの編集→cssへコンパイル
 
-
 ## 実装したい機能
 - コンパイル
   - Pug, Scss
@@ -37,6 +36,7 @@ npm run dev(gulp起動)
 
 ## 使用パッケージ
 npm i -Dでインストール
+導入済みパッケージはpackaga.jsonのdevDependenciesを参照
 - gulp
   - Gulp本体
 - gulp-pug
@@ -52,6 +52,15 @@ npm i -Dでインストール
   - エラーを通知する
 - gulp-plumber
   - エラーが原因でタスクが強制停止することを防止
+- gulp-imagemin
+  - 画像圧縮
+- imagemin-pngquant
+  - pngを圧縮
+- imagemin-mozjpeg
+  - jpgを圧縮
+- gulp-changed
+  - 監視対象と出力先のディレクトリの差分を検出し、変更があったファイルのみを処理の対象にする
+  - 新しい画像を入れたらその画像だけ圧縮処理をする
 
 ## 使用意義を追って調べる(現時点で理解できていないもの)
 - gulp-concat
